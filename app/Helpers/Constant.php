@@ -20,10 +20,10 @@ define('MENUTYPE1', 1);
 define('MENUTYPE2', 2);
 //pagination
 define('PAGINATION', 20);
-define('PAGINATE', 36);
-define('PAGINATE_BOX', 12);
+define('PAGINATE', 80);
+define('PAGINATE_BOX', 24);
 //404
-define('PAGENOTFOUND', 'Trang không tìm thấy');
+define('PAGENOTFOUND', '404 Page not found');
 //device
 define('MOBILE', 1);
 define('PC', 2);

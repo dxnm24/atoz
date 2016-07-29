@@ -1,4 +1,4 @@
-<div class="fullscreen"><a id="fsbutton"><i class="fa fa-television" aria-hidden="true"></i> Chơi ở chế độ toàn màn hình</a></div>
+<div class="fullscreen"><a id="fsbutton"><i class="fa fa-television" aria-hidden="true"></i> FullScreen</a></div>
 <span id="fsstatus"></span>
 <style>
 	#specialstuff {

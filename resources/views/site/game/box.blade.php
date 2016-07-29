@@ -1,4 +1,4 @@
-<div class="row small-up-3 medium-up-4 large-up-6">
+<div class="row small-up-2 medium-up-6 large-up-8">
 	@foreach($data as $key => $value)
 	<?php 
 		// if(isset($value->seri) && $value->seri == ACTIVE) {
@@ -15,14 +15,14 @@
 	<div class="column">
 		<div class="callout item">
 			<!-- 400x370 -->
-			<a href="{{ $url }}" title="{{ $value->name }}"{{ $seriClass }}>
+			<a href="{{ $url }}" title="{!! $value->name !!}"{{ $seriClass }}>
 				@if($checkSeri == true)
-				<span><img src="{{ $value->image }}" alt="{{ $value->name }}" title="{{ $value->name }}"></span>
+				<span><img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}"></span>
 				@else
-				<img src="{{ $value->image }}" alt="{{ $value->name }}" title="{{ $value->name }}">
+				<img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}">
 				@endif
 			</a>
-			<h2><a href="{{ $url }}" title="{{ $value->name }}">{{ $value->name }}</a></h2>
+			<h2><a href="{{ $url }}" title="{!! $value->name !!}">{!! $value->name !!}</a></h2>
 		</div>
 	</div>
 	@endforeach

@@ -175,30 +175,38 @@ class SiteController extends Controller
         }
         // IF SLUG EXIST -moi-nhat or -hay-nhat
         // game type with sortby
-        $latestSlug = strpos($slug, '-moi-nhat');
-        $hotestSlug = strpos($slug, '-hay-nhat');
+        $latestSlug = strpos($slug, 'latest-');
+        $hotestSlug = strpos($slug, 'best-');
         if($latestSlug !== false || $hotestSlug !== false) {
-            $typeSlug = substr($slug, 0, -9);
+            $isHotOrNew = null;
+            if($latestSlug !== false) {
+                $typeSlug = substr($slug, 7);    
+            }
+            if($hotestSlug !== false) {
+                $typeSlug = substr($slug, 5);
+            }
             $type = $this->getGameTypeBySlug($typeSlug);
             if(isset($type)) {
                 if($latestSlug !== false) {
                     $data = $this->getGameByRelationsQuery('type', $type->id)->paginate(PAGINATE);
-                    $type->name = $type->name.' mới nhất';
-                    $type->slug = $type->slug.'-moi-nhat';
+                    $type->name = 'Latest '.$type->name;
+                    $type->slug = 'latest-'.$type->slug;
+                    $isHotOrNew = 1;
                 }
                 if($hotestSlug !== false) {
                     $data = $this->getGameByRelationsQuery('type', $type->id, 'view', 'desc')->paginate(PAGINATE);
-                    $type->name = $type->name.' hay nhất';
-                    $type->slug = $type->slug.'-hay-nhat';
+                    $type->name = 'Best '.$type->name;
+                    $type->slug = 'best-'.$type->slug;
+                    $isHotOrNew = 1;
                 }
                 $paginate = 1;
                 $total = count($data);
                 if($total > 0) {
                     //put cache
-                    $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate])->render();
+                    $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate, 'isHotOrNew' => $isHotOrNew])->render();
                     Cache::forever($cacheName, $html);
                     //return view
-                    return view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate]);
+                    return view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate, 'isHotOrNew' => $isHotOrNew]);
                 }
             }
         }

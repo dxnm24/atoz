@@ -9,13 +9,13 @@
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="language" content="vietnamese" />
 	<meta name="distribution" content="global">
-	<meta name="title" content="{{ $game->meta_title }}">
-	<meta name="keywords" content="{{ $game->meta_keyword }}">
-	<meta name="description" content="{{ $game->meta_description }}">
+	<meta name="title" content="{!! $game->meta_title !!}">
+	<meta name="keywords" content="{!! $game->meta_keyword !!}">
+	<meta name="description" content="{!! $game->meta_description !!}">
 	<meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" name="viewport">
 	<link rel="icon" href="{{ url('img/favicon.png') }}" type="image/x-icon">
-	<title>{{ $game->name }}</title>
+	<title>{!! $game->name !!}</title>
 	{!! GA !!}
 	<link rel="stylesheet" type="text/css" href="{{ url('css/play.css') }}">
 	<script type="text/javascript" src="{{ url('js/jquery.min.js') }}"></script>
@@ -26,10 +26,10 @@
 {!! CommonGame::getBoxGame($game->url, $game->type, $game->width, $game->height, $adCode) !!}
 <div id="menubox" style="display: none;">
 	<ul>
-		<li><a class="menubox-home" href="/">Trang chủ</a></li>
-		<li><a class="menubox-reload" href="{{ CommonUrl::getUrl($game->slug).'?play=true' }}">Tải lại game</a></li>
-		<li><a class="menubox-back" onclick="window.history.go(-1);return false;">Quay lại trang trước</a></li>
-		<li><a class="menubox-close" id="menuhide">Đóng Menu</a></li>
+		<li><a class="menubox-home" href="/">A2zgame.net</a></li>
+		<li><a class="menubox-reload" href="{{ CommonUrl::getUrl($game->slug).'?play=true' }}">Reload Game</a></li>
+		<li><a class="menubox-back" onclick="window.history.go(-1);return false;">Previous Page</a></li>
+		<li><a class="menubox-close" id="menuhide">Close Menu</a></li>
 	</ul>
 </div>
 </body>

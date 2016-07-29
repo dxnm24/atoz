@@ -1,11 +1,16 @@
 <?php 
+	if(isset($isHotOrNew)) {
+		$metaPrefix = $type->name.' | ';
+	} else {
+		$metaPrefix = '';
+	}
 	if($total > 0) {
 		$title = ($type->meta_title!='')?$type->meta_title:$type->name;
 		$h1 = $type->name;
 		$is404 = false;
-		$meta_title = $type->meta_title;
-		$meta_keyword = $type->meta_keyword;
-		$meta_description = $type->meta_description;
+		$meta_title = $metaPrefix.$type->meta_title;
+		$meta_keyword = $metaPrefix.$type->meta_keyword;
+		$meta_description = $metaPrefix.$type->meta_description;
 		$meta_image = $type->meta_image;
 	} else {
 		$title = PAGENOTFOUND;
@@ -46,12 +51,12 @@
 		@include('site.common.breadcrumb', $breadcrumb)
 	</div>
 	<div class="row column box-title">
-		<h1>{{ $h1 }}</h1>
+		<h1>{!! $h1 !!}</h1>
 	</div>
 	@if($type->summary != '' || $type->description != '')
 	<div class="row column">
 		@if($type->summary != '')
-		<p class="summary">{{ $type->summary }}</p>
+		<p class="summary">{!! $type->summary !!}</p>
 		@endif
 		@if($type->description != '')
 		<div class="description">{!! $type->description !!}</div>

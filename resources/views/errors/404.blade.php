@@ -17,7 +17,7 @@
 		<h3>{{ PAGENOTFOUND }}</h3>
 	</div>
 	<div class="row column">
-		<p>Đường dẫn không tồn tại. Mời bạn tham khảo những tựa game hay khác tại đây</p>
+		<p>The requested URL was not found on this server. Please play more games at <a href="/">here</a></p>
 	</div>
 </div>
 @endsection
