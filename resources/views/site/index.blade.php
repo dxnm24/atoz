@@ -61,7 +61,7 @@
 						<div class="clearfix"></div>
 						@include('site.game.box', array('data' => $value->games))
 					</div>
-					<div class="tabs-panel" id="{{ $value->slug.'-hay-nhat' }}">
+					<div class="tabs-panel" id="{{ 'best-'.$value->slug }}">
 						<a href="{{ $urlBest }}" class="btn-seemore float-right hide-for-small-only"><span>See More</span></a>
 						<div class="clearfix"></div>
 						@include('site.game.box', array('data' => $value->games2))
