@@ -23,6 +23,10 @@
 				<div class="title-bar-left">
 					<button class="menu-icon" type="button" data-open="offCanvasLeft" aria-expanded="false" aria-controls="offCanvasLeft"><span class="menu-button-text">&nbsp;</span></button>
       				<span class="title-bar-title">a2zgame.net</span>
+
+				</div>
+				<div class="title-bar-right">
+					<button onclick="searchhide()" class="search-icon"></button>
 				</div>
 			</div>
 			@include('site.common.top')
