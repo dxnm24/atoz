@@ -9,7 +9,7 @@
 <div class="gametypes">
 	<div class="row column box-title no-padding-bottom">
 		<h3>{!! $data->name !!}</h3>
-		<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only">See More</a>
+		<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only"><span>See More</span></a>
 	</div>
 	<div class="box-inner">
 	@include('site.game.box', array('data' => $gameData))

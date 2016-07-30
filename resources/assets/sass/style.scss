@@ -114,6 +114,7 @@ a:focus {
 	> a > img,
 	> a > span > img {
 		border-radius: 0.313rem 0.313rem 0 0;
+		width: 100%;
 	}
 }
 .item:hover h2 a {
@@ -174,11 +175,12 @@ ul.box-tabs > li.is-active > h3 > a {
 }
 a.btn-seemore {
 	background-color: #b35900;
-	-webkit-border-radius: 0.188rem;
-	border-radius: 0.188rem;
+	-webkit-border-radius: 0.313rem;
+	border-radius: 0.313rem;
 	color: #fff;
 	padding: 0.5rem 1rem 0.5rem 1rem;
 	margin-bottom: 0.313rem;
+	transition: all 0.5s;
 }
 .box-seemore {
 	a.btn-seemore {
@@ -187,6 +189,27 @@ a.btn-seemore {
 		text-align: center;
 	}
 }
+a.btn-seemore span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+a.btn-seemore span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -0.438rem;
+  transition: 0.5s;
+}
+a.btn-seemore:hover span {
+  padding-right: 0.625rem;
+}
+a.btn-seemore:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 a.btn-seemore i.fa,
 a.btn-play i.fa {
 	padding-left: 0.313rem;
@@ -194,8 +217,8 @@ a.btn-play i.fa {
 }
 a.btn-play {
 	background-color: #b35900;
-	-webkit-border-radius: 0.188rem;
-	border-radius: 0.188rem;
+	-webkit-border-radius: 0.313rem;
+	border-radius: 0.313rem;
 	color: #fff;
 	padding: 0.500rem;
 	width: 100%;
@@ -287,12 +310,12 @@ footer {
 					content: "";
 					position: absolute;
 					top: 0;
-					left: -0.750rem;
+					left: -0.938rem;
 					width: 0;
 					height: 0;
 					border-color: transparent #3A3939 transparent transparent;
 					border-style: solid;
-					border-width: 0.875rem 0.750rem 0.938rem 0;
+					border-width: 0.938rem 0.938rem 1.063rem 0;
 				}
 				a {
 					display: inline-block;
@@ -300,10 +323,10 @@ footer {
 					margin: 0;
 					padding: 0.313rem 0.625rem;
 					background: #3A3939;
-					-webkit-border-bottom-right-radius: 0.188rem;
-					border-bottom-right-radius: 0.188rem;
-					-webkit-border-top-right-radius: 0.188rem;
-					border-top-right-radius: 0.188rem;
+					-webkit-border-bottom-right-radius: 0.313rem;
+					border-bottom-right-radius: 0.313rem;
+					-webkit-border-top-right-radius: 0.313rem;
+					border-top-right-radius: 0.313rem;
 					-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
 					box-shadow: 0 1px 1px rgba(0, 0, 0, .12);
 					color: #fff;
@@ -313,8 +336,8 @@ footer {
 				a:after {
 					content: "";
 					position: absolute;
-					top: 0.750rem;
-					left: 1px;
+					top: 0.813rem;
+					left: 0;
 					float: left;
 					width: 0.313rem;
 					height: 0.313rem;
@@ -333,8 +356,8 @@ footer {
 }
 .tags-icon {
 	background-color: #b35900;
-	-webkit-border-radius: 0.188rem;
-	border-radius: 0.188rem;
+	-webkit-border-radius: 0.313rem;
+	border-radius: 0.313rem;
 	display: inline-block;
 	color: #fff;
 	margin-bottom: 0.313rem;
@@ -416,7 +439,7 @@ footer {
 		color: #fff;
 		background: #333;
 		padding: 0.188rem 0.313rem;
-		border-radius: 0.188rem;
+		border-radius: 0.313rem;
 		border: 1px solid #888;
 		font-size: 0.813rem;
 	}
@@ -432,33 +455,16 @@ footer {
 .center>.social {
 	text-align: center;
 }
-form.search-form {
-	position: relative;
-	width: 25.000rem;
-	margin-top: 1.875rem;
+.search {
+	display: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
-input.search-input {
-	position: relative;
-	margin-bottom: 0;
-	padding-right: 8.750rem;
-	border-radius: 0.313rem;
-	font-size: 0.875rem;
-}
-a.search-button {
-	background-color: #1993c6;
-	border: none;
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 0.563rem;
-	height: 2.375rem;
-	text-decoration: none;
-	color: #fff;
-	border-radius: 0 0.313rem 0.313rem 0;
-}
-a.search-button:hover,
-a.search-button:focus {
-	color: #fff;
+.search-icon {
+    background-image: url('http://storage.googleapis.com/gt_img/i-mg.svg');
+    background-size: 32px;
+    height: 32px;
+    width: 32px;
 }
 .box-inner {
 	position: relative;
