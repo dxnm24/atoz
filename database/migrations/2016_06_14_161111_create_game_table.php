@@ -37,7 +37,7 @@ class CreateGameTable extends Migration
             $table->string('start_date');
             $table->integer('view');
             $table->integer('status')->default(ACTIVE);
-            $table->string('lang')->default(VI);
+            $table->string('lang')->default(EN);
             $table->softDeletes();
             $table->timestamps();
             $table->index('slug', 'games_slug_index');

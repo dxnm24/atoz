@@ -57,23 +57,57 @@ a:focus {
 }
 .title-bar {
 	background-color: #1993c6;
+	padding: 0.313rem;
 }
 .close-button {
 	color: #fff;
 	top: -1.250rem;
 	font-size: 3.125rem;
 }
-.logo img {
-	height: auto;
-	max-width: 100%;
+.menu-icon {
+    height: 0.625rem;
+}
+.topbar {
+	padding-top: 0.313rem;
+    background: #333;
+    padding-bottom: 0.313rem;
+	.topbar-menu {
+		display: inline-block;
+		width: auto;
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				display: inline-block;
+				list-style: none;
+				a {
+					color: #ccc;
+				    padding: 0 0.625rem;
+				}
+				a:hover {
+					color: #fff;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+a.logo {
+	position: relative;
+	top: -0.313rem;
+	> img {
+		height: 1.875rem;
+		max-width: 100%;
+	}
 }
 .title-bar-title {
 	padding-left: 5.625rem;
 }
 .main {
 	background: #f9f9f9;
-	padding-top: 1.563rem;
-	padding-bottom: 1.563rem;
+	border-bottom: 1px #e0e0e0 solid;
+	padding-top: 0.938rem;
+	padding-bottom: 0.938rem;
 }
 .item {
 	background-color: #fff;
@@ -104,12 +138,12 @@ a:focus {
 		background: url('/img/ribbon.png') no-repeat center;
 	    position: absolute;
 	    background-size: contain;
-	    width: 3.125rem;
-	    height: 3.125rem;
+        width: 40px;
+	    height: 40px;
 	    content: "";
 	    z-index: 9;
-	    top: -0.750rem;
-	    left: -0.750rem;
+	    top: 0;
+	    left: 0;
 	}
 	> a > img,
 	> a > span > img {
@@ -125,31 +159,41 @@ a:focus {
 	background: #f0f0f0;
 	.menu>li>a {
 		font-size: 1.1rem;
+		color: #b35900;
+	}
+	.menu>li>a:hover {
+		text-decoration: underline;
 	}
 }
 .box {
 	margin-bottom: 0.625rem;
-	> .row {
-		
+	.column,
+	.columns {
+		padding-left: 0.625rem;
+		padding-right: 0.625rem;
 	}
 }
 .tabs-panel {
 	padding: 0;
 	> a {
-	    top: -2.563rem;
+	    top: -3.688rem;
 	    position: absolute;
-	    right: 0;
+	    right: 0.938rem;
 	}
 }
 ul.box-tabs {
+	background: #ebebeb;
 	margin: 0;
+	padding: 0.938rem;
 	> li.tabs-title {
 		list-style: none;
+		margin-right: 0.625rem;
 		> h3 {
+			font-size: 1.250rem;
 			margin: 0;
 			> a {
-				font-size: 1.55rem;
-			    color: #2c3e50;
+				font-size: 1.250rem;
+			    color: #b35900;
 			    display: inline-block;
 			}
 		}
@@ -157,58 +201,63 @@ ul.box-tabs {
 	
 }
 .box-title {
-	padding-top: 0.938rem;
-	padding-bottom: 0.938rem;
+    background: #ebebeb;
+    padding: 0.938rem !important;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
 	> h1 {
-		font-size: 1.55rem;
-	    color: #2c3e50;
+		font-size: 1.250rem;
+	    color: #b35900;
 	    display: inline-block;
 	    font-weight: bold;
+	    margin: 0;
 	}
 }
 .box-title > h3,
 ul.box-tabs > li.is-active > h3 > a {
-	font-size: 1.55rem;
-    color: #2c3e50;
+	font-size: 1.250rem;
+    color: #b35900;
     display: inline-block;
     font-weight: bold;
+    margin: 0;
 }
 a.btn-seemore {
 	background-color: #b35900;
 	-webkit-border-radius: 0.313rem;
 	border-radius: 0.313rem;
 	color: #fff;
-	padding: 0.5rem 1rem 0.5rem 1rem;
-	margin-bottom: 0.313rem;
+	padding: 0.313rem 0.938rem;
 	transition: all 0.5s;
+	margin: 0;
 }
 .box-seemore {
 	a.btn-seemore {
 		width: 100%;
 		display: block;
 		text-align: center;
+		margin-bottom: 0.313rem;
 	}
 }
 a.btn-seemore span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
 }
 a.btn-seemore span:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -0.438rem;
-  transition: 0.5s;
+	content: '»';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -0.438rem;
+	transition: 0.5s;
 }
 a.btn-seemore:hover span {
-  padding-right: 0.625rem;
+	padding-right: 0.625rem;
 }
 a.btn-seemore:hover span:after {
-  opacity: 1;
-  right: 0;
+	opacity: 1;
+	right: 0;
 }
 a.btn-seemore i.fa,
 a.btn-play i.fa {
@@ -233,20 +282,40 @@ a.btn-play {
 .no-padding-bottom {
 	padding-bottom: 0;
 }
-footer {
-	background-color: #333;
-	color: #fff;
+.bottom {
+	background: #fff;
 	padding-top: 0.938rem;
 	padding-bottom: 0.938rem;
 	a {
-		color: #fff;
+		color: #333;
+		line-height: 1.875rem;
+	}
+	a:hover,
+	a:focus {
+		color: #333;
+		text-decoration: underline;
+	}
+	.bottom-item {
+	
+	}
+}
+footer {
+	background-color: #fff;
+	color: #333;
+	a {
+		color: #333;
 		font-size: 0.750rem;
 		text-decoration: underline;
 	}
 	a:hover,
 	a:focus {
-		color: #fff;
+		color: #333;
 		text-decoration: underline;
+	}
+	.footer {
+		padding-top: 0.938rem;
+		padding-bottom: 0.938rem;
+		border-top: 1px #e0e0e0 solid;
 	}
 }
 .copy,
@@ -257,7 +326,7 @@ footer {
 	margin-bottom: 0.5rem;
 }
 .game {
-	background: #fefefe;
+	background: #ccc;
 	margin-bottom: 1.563rem;
 	margin-top: 0.625rem;
 	border-bottom: 0.188rem solid #f4f4f4;
@@ -267,8 +336,8 @@ footer {
 	margin-top: 1.563rem;
 	margin-bottom: 0.938em;
 }
-.info {
-
+img.info-avatar {
+	width: 100%;
 }
 .summary {
 	font-weight: bold;
@@ -301,6 +370,7 @@ footer {
 			list-style: none;
 			display: inline-block;
 			margin-left: 0.625rem;
+		    margin-bottom: 0.188rem;
 			margin-right: 0.625rem;
 			h2 {
 				display: inline-block;
@@ -353,18 +423,18 @@ footer {
 			}
 		}
 	}
-}
-.tags-icon {
-	background-color: #b35900;
-	-webkit-border-radius: 0.313rem;
-	border-radius: 0.313rem;
-	display: inline-block;
-	color: #fff;
-	margin-bottom: 0.313rem;
-	margin-right: 0.313rem;
-	padding: 0.313rem 0.625rem;
-	i.fa {
+	.tags-icon {
+		background-color: #b35900;
+		-webkit-border-radius: 0.313rem;
+		border-radius: 0.313rem;
+		display: inline-block;
 		color: #fff;
+		margin-bottom: 0.313rem;
+		margin-right: 0.313rem;
+		padding: 0.313rem 0.625rem;
+		i.fa {
+			color: #fff;
+		}
 	}
 }
 .gametypes {
@@ -457,16 +527,33 @@ footer {
 }
 .search {
 	display: none;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 }
 .search-icon {
     background-image: url('http://storage.googleapis.com/gt_img/i-mg.svg');
-    background-size: 32px;
-    height: 32px;
-    width: 32px;
+    background-size: 30px;
+    height: 28px;
+    width: 30px;
+    position: relative;
+    top: 0.313rem;
 }
 .box-inner {
 	position: relative;
-	padding: 1.563rem 0.625rem 0.625rem 0.625rem;
+	padding: 0;
+	margin-top: 0.625rem;
+}
+@media screen and (min-width: 40em) {
+	.info {
+		.column,
+		.columns {
+			padding-left: 0.9375rem;
+			padding-right: 0.9375rem;
+		}
+	}
+	.box-inner {
+		position: relative;
+		padding: 0 0.313rem;
+		margin-top: 0.625rem;
+	}
 }

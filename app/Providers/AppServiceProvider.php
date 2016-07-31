@@ -14,20 +14,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $topmenu = DB::table('menus')
+        self::getMenus(MENUTYPE1, 'topmenu');
+        self::getMenus(MENUTYPE2, 'bottommenu');
+        self::getMenus(MENUTYPE3, 'topbar');
+    }
+
+    private function getMenus($type, $name)
+    {
+        $menu = DB::table('menus')
             ->where('status', ACTIVE)
-            ->where('type', MENUTYPE1)
+            ->where('type', $type)
             ->orderByRaw(DB::raw("position = '0', position"))
             ->orderBy('name')
             ->get();
-        $sidemenu = DB::table('menus')
-            ->where('status', ACTIVE)
-            ->where('type', MENUTYPE2)
-            ->orderByRaw(DB::raw("position = '0', position"))
-            ->orderBy('name')
-            ->get();
-        view()->share('topmenu', $topmenu);
-        view()->share('sidemenu', $sidemenu);
+        view()->share($name, $menu);
     }
 
     /**

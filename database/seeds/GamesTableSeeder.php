@@ -33,7 +33,7 @@ class GamesTableSeeder extends Seeder
                 'start_date' => date('Y-m-d H:i:s'),
                 'position' => 1,
                 'status' => ACTIVE,
-                'lang' => 'vi',
+                'lang' => EN,
             ]);
             $i++;
             GameTypeRelation::insert([

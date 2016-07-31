@@ -30,7 +30,7 @@
 			<?php $url = CommonUrl::getUrl($value->slug); ?>
 			@if(count($value->games2) == 0)
 			<div class="box">
-				<div class="row column box-title no-padding-bottom">
+				<div class="row column box-title">
 					<h3>{!! $value->name !!}</h3>
 					<a href="{{ $url }}" class="btn-seemore float-right hide-for-small-only"><span>See More</span></a>
 				</div>
@@ -49,10 +49,10 @@
 			<div class="box">
 				<ul class="box-tabs clearfix" data-tabs id="box-tabs-{{ $value->id }}">
 					<li class="tabs-title is-active">
-						<h3><a href="#{{ 'latest-'.$value->slug }}" aria-selected="true">Latest {!! $value->name !!}</a></h3>
+						<h3><a href="#{{ 'latest-'.$value->slug }}" aria-selected="true"><i class="fa fa-clock-o" aria-hidden="true"></i> Latest {!! $value->name !!}</a></h3>
 					</li>
 					<li class="tabs-title">
-						<h3><a href="#{{ 'best-'.$value->slug }}">Best {!! $value->name !!}</a></h3>
+						<h3><a href="#{{ 'best-'.$value->slug }}"><i class="fa fa-star" aria-hidden="true"></i> Best {!! $value->name !!}</a></h3>
 					</li>
 				</ul>
 				<div class="box-inner" data-tabs-content="box-tabs-{{ $value->id }}">

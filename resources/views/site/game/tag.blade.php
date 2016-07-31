@@ -51,7 +51,9 @@
 		@endif
 	</div>
 	@endif
+	<div class="box-inner">
 	@include('site.game.box', array('data' => $data))
+	</div>
 	<div class="row column">
 		@include('site.common.paginate', ['paginator' => $data])
 	</div>

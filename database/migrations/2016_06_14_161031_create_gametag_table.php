@@ -25,7 +25,7 @@ class CreateGametagTable extends Migration
             $table->string('meta_description');
             $table->string('meta_image');
             $table->integer('status')->default(ACTIVE);
-            $table->string('lang')->default(VI);
+            $table->string('lang')->default(EN);
             $table->timestamps();
             $table->index('slug', 'game_tags_slug_index');
         });

@@ -19,7 +19,7 @@ class ConfigsTableSeeder extends Seeder
             'meta_description' => '',
             'meta_image' => '',
             'status' => ACTIVE,
-            'lang' => VI,
+            'lang' => EN,
         ]);
     }
 }

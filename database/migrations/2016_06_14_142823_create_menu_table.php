@@ -24,7 +24,7 @@ class CreateMenuTable extends Migration
             $table->string('icon');
             $table->string('image');
             $table->integer('status')->default(ACTIVE);
-            $table->string('lang')->default(VI);
+            $table->string('lang')->default(EN);
             $table->timestamps();
             $table->index('position', 'menus_position_index');
         });

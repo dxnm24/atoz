@@ -30,8 +30,8 @@
 				</div>
 			</div>
 			@include('site.common.top')
-			@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
 			<div class="main">
+				@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
 				@if(isset($isPlay) && $isPlay == true)
 					<div class="row">
 						<div class="column">
@@ -47,8 +47,8 @@
 						</div>
 					</div>
 				@endif
+				@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
 			</div>
-			@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
 			@include('site.common.bottom')
 		</div>
 	</div>

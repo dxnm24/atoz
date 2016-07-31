@@ -21,7 +21,7 @@ class CreateConfigTable extends Migration
             $table->string('meta_description');
             $table->string('meta_image');
             $table->integer('status')->default(ACTIVE);
-            $table->string('lang')->default(VI);
+            $table->string('lang')->default(EN);
             $table->timestamps();
         });
     }

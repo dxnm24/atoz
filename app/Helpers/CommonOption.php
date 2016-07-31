@@ -30,7 +30,7 @@ class CommonOption
     //menu
     static function menuTypeArray()
     {
-        return array(MENUTYPE1=>'Top menu', MENUTYPE2=>'Side menu');
+        return array(MENUTYPE1=>'Top menu', MENUTYPE2=>'Bottom menu', MENUTYPE3=>'Top bar');
     }
     static function getMenuType($menuType=ACTIVE)
     {
@@ -85,5 +85,19 @@ class CommonOption
     {
         $array = self::adPositionArray();
         return $array[$adPosition];
+    }
+    //sort by game type
+    static function gameSortByArray()
+    {
+        return array(
+            'start_date' => 'Mặc định (Ngày đăng giảm dần)',
+            'view' => 'Lượt chơi giảm dần',
+
+        );
+    }
+    static function getGameSortBy($sortBy)
+    {
+        $array = self::gameSortByArray();
+        return $array[$sortBy];
     }
 }

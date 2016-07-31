@@ -24,7 +24,7 @@ class CreateAdTable extends Migration
             $table->string('start_date');
             $table->string('end_date');
             $table->integer('status')->default(ACTIVE);
-            $table->string('lang')->default(VI);
+            $table->string('lang')->default(EN);
             $table->timestamps();
             $table->index('position', 'ads_position_index');
         });
