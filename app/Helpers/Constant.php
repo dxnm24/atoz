@@ -16,9 +16,9 @@ define('GAMEHTML5', 1);
 define('GAMEFLASH', 2);
 //menu top nam ngang
 define('MENUTYPE1', 1);
-//menu bottom
+//menu left
 define('MENUTYPE2', 2);
-//menu top bar
+//menu bottom
 define('MENUTYPE3', 3);
 //pagination
 define('PAGINATION', 20);

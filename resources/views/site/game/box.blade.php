@@ -1,4 +1,4 @@
-<div class="row small-up-2 medium-up-4 large-up-6">
+<div class="row small-up-2 medium-up-4 large-up-5">
 	@foreach($data as $key => $value)
 	<?php 
 		// if(isset($value->seri) && $value->seri == ACTIVE) {

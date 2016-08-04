@@ -23,33 +23,40 @@
 				<div class="title-bar-left">
 					<button class="menu-icon" type="button" data-open="offCanvasLeft" aria-expanded="false" aria-controls="offCanvasLeft"><span class="menu-button-text">&nbsp;</span></button>
       				<span class="title-bar-title">a2zgame.net</span>
-
 				</div>
 				<div class="title-bar-right">
 					<button onclick="searchhide()" class="search-icon"></button>
 				</div>
 			</div>
-			@include('site.common.top')
-			<div class="main">
-				@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
-				@if(isset($isPlay) && $isPlay == true)
+			<div class="row column">
+				<div class="container">
 					<div class="row">
-						<div class="column">
-							@yield('content')
+						<div class="medium-2 columns">
+							<div class="side show-for-medium">
+								<!-- <a href="/" class="logo">A2ZGame</a> -->
+								@if($leftmenu)
+								<ul>
+									@foreach($leftmenu as $key => $value)
+										<li><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
+									@endforeach
+								</ul>
+								@endif
+							</div>
 						</div>
-					</div>
-				@else
-					<div class="row">
-						<div class="column">
-							<div class="content">
-								@yield('content')
+						<div class="medium-10 columns">
+							<div class="main">
+								@include('site.common.top')
+								@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
+								<div class="content">
+									@yield('content')
+								</div>
+								@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
+								@include('site.common.bottom')
 							</div>
 						</div>
 					</div>
-				@endif
-				@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
+				</div>
 			</div>
-			@include('site.common.bottom')
 		</div>
 	</div>
 </div>

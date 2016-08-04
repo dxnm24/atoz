@@ -61,7 +61,7 @@
 	</div>
 	@endif
 	<div class="row column">
-		<div class="content">
+		<div class="gameinfo">
 			<div class="info">
 				<div class="row">
 					<div class="medium-2 small-3 columns"><img src="{{ $game->image }}" alt="{!! $game->name !!}" class="info-avatar" /></div>

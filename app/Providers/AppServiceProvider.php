@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         self::getMenus(MENUTYPE1, 'topmenu');
-        self::getMenus(MENUTYPE2, 'bottommenu');
-        self::getMenus(MENUTYPE3, 'topbar');
+        self::getMenus(MENUTYPE2, 'leftmenu');
+        self::getMenus(MENUTYPE3, 'bottommenu');
     }
 
     private function getMenus($type, $name)
