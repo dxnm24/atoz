@@ -1,6 +1,6 @@
 @if($bottommenu)
 <div class="bottom">
-	<div class="row small-up-2 medium-up-6 large-up-7">
+	<div class="row small-up-2 medium-up-4 large-up-5">
 		@foreach($bottommenu as $key => $value)
 		<div class="column">
 			<div class="bottom-item">
