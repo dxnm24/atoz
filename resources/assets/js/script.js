@@ -14,6 +14,22 @@ function lazy()
 	});
 	$(".item>a>img").lazyload({skip_invisible : false,failure_limit : 15, effect: "fadeIn", bind: "event"});
 }
+// function gotop()
+// {
+//     var t = $(".gotop");
+//     $(window).scroll(function() {
+//         if ($(this).scrollTop() > 10) {
+//             t.addClass("active");
+//         } else {
+//             t.removeClass("active");
+//         }
+//     });
+//     t.click(function() {
+//         $('body,html').animate({scrollTop: 0}, 300);
+//         return false;
+//     });
+// }
 $(function () {
 	lazy();
+	// gotop();
 });

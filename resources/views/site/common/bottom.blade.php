@@ -1,5 +1,8 @@
 @if($bottommenu)
 <div class="bottom">
+	<div class="row column box-title">
+		<h3>More Categories</h3>
+	</div>
 	<div class="row small-up-2 medium-up-4 large-up-5">
 		@foreach($bottommenu as $key => $value)
 		<div class="column">
@@ -13,9 +16,6 @@
 @endif
 <footer>
 	<div class="row column">
-		<div class="footer">
-			<p class="copy">© MMXVI <a href="/" target="_blank">a2zgame.net</a></p>
-			<p class="made-with-love">Made with ❤ in Hanoi</p>	
-		</div>
+		<p class="copy">© MMXVI <a href="/" target="_blank">a2zgame.net</a> - <span class="made-with-love">Made with ❤ in Paradise</span></p>
 	</div>
 </footer>

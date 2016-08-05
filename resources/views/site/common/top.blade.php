@@ -12,14 +12,15 @@
         </form>
 	</div>
 </header>
-@if($topmenu)
 <div class="topnav show-for-medium">
 	<div class="row column">
 		<ul class="menu">
-			@foreach($topmenu as $key => $value)
-				<li {{ checkCurrent(url($value->url)) }}><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
-			@endforeach
+			<li {{ checkCurrent(url('/'), 1) }}><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+			@if($topmenu)
+				@foreach($topmenu as $key => $value)
+					<li {{ checkCurrent(url($value->url)) }}><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
+				@endforeach
+			@endif
 		</ul>
 	</div>
 </div>
-@endif

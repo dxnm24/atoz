@@ -54,12 +54,18 @@ function limit_text($text, $len) {
     return $out;
 }
 //check current menu
-function checkCurrent($url)
+function checkCurrent($url, $home=null)
 {
     $currentUrl = Request::url();
-    $segment1 = Request::segment(1);
-    if ($currentUrl == $url && $segment1 != null) {
-        return 'class=current';
+    if($home != null) {
+        if ($currentUrl == $url) {
+            return 'class=current';
+        }
+    } else {
+        $segment1 = Request::segment(1);
+        if ($currentUrl == $url && $segment1 != null) {
+            return 'class=current';
+        }
     }
     return;
 }

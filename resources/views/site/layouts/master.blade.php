@@ -41,6 +41,9 @@
 									@endforeach
 								</ul>
 								@endif
+								<!-- <div class="gotop">
+									<i class="fa fa-angle-up"></i>
+								</div> -->
 							</div>
 						</div>
 						<div class="medium-10 columns">
