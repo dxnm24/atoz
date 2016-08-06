@@ -66,7 +66,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group" style="display: none;">
+					<div class="form-group">
 						<label for="image">ICON Image</label>
 						<p>Định dạng jpg, jpeg, png. Tên thư mục & ảnh phải là tiếng việt không dấu, không chứa dấu cách + kí tự đặc biệt. Dung lượng ảnh nhẹ (< 1mb)</p>
 						<div class="row">

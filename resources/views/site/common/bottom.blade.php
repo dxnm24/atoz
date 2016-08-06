@@ -3,10 +3,16 @@
 	<div class="row column box-title">
 		<h3>More Categories</h3>
 	</div>
-	<div class="row small-up-2 medium-up-4 large-up-5">
+	<div class="row small-up-2 medium-up-3 large-up-4">
 		@foreach($bottommenu as $key => $value)
 		<div class="column">
-			<div class="bottom-item">
+			<div class="bottom-item hide-for-small-only">
+				<a href="{{ CommonUrl::getUrl($value->url) }}">
+					<img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}">
+					<span>{!! $value->name !!}</span>
+				</a>
+			</div>
+			<div class="bottom-item-mobile show-for-small-only">
 				<a href="{{ CommonUrl::getUrl($value->url) }}"><i class="fa fa-angle-right" aria-hidden="true"></i> {!! $value->name !!}</a>
 			</div>
 		</div>
