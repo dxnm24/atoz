@@ -26,14 +26,6 @@ body {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
 }
-@media screen and (min-width: 40em) {
-	.medium-2 {
-	    width: 12%;
-	}
-	.medium-10 {
-	    width: 88%;
-	}
-}
 h1, h2, h3, h4, h5, h6 {
 	font-family: Dosis,Helvetica,Arial,sans-serif;
 }
@@ -117,6 +109,9 @@ a.logo {
     margin: 0;
     padding: 0;
 	ul {
+		position: fixed;
+	    top: 0.625rem;
+	    width: 12%;
 		margin: 0;
 		padding: 0;
 		li {
@@ -686,8 +681,138 @@ img.info-avatar {
 //     background-color: rgba(0, 0, 0, 1);
 // }
 
+/* Small only */
 @media screen and (max-width: 39.9375em) {
+	body {
+		background: none;
+	}
+	.container {
+		background: none;
+		border: none;
+		padding: 0;
+	}
+	.main {
+		background: none;
+		border-radius: none;
+		border: none;
+	}
 	.content, header {
 		padding: 0.625rem 0;
+		border-radius: none;
+		border: none;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	.medium-2 {
+	    width: 12%;
+	}
+	.medium-10 {
+	    width: 88%;
+	}
+	.side {
+		ul {
+		    width: 9%;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	.side {
+		ul {
+		    width: 12%;
+		}
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	.side {
+		ul {
+		    width: 12%;
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+	.side {
+		ul {
+		    width: 12%;
+		}
+	}
+}
+/*1080*/
+@media screen and (min-width: 67.500em) {
+	.side {
+		ul {
+		    width: 11%;
+		}
+	}
+}
+/*1090*/
+@media screen and (min-width: 68.125em) {
+	.side {
+		ul {
+		    width: 10%;
+		}
+	}
+}
+/*1200*/
+@media screen and (min-width: 75em) {
+	.side {
+		ul {
+		    width: 9%;
+		}
+	}
+}
+/* 1400px */
+@media screen and (min-width: 87.500em) {
+	.side {
+		ul {
+		    width: 8%;
+		}
+	}
+}
+/* 1600px */
+@media screen and (min-width: 100.000em) {
+	.side {
+		ul {
+		    width: 7%;
+		}
+	}
+}
+/* 1800px */
+@media screen and (min-width: 112.500em) {
+	.side {
+		ul {
+		    width: 6%;
+		}
+	}
+}
+/* 2100px */
+@media screen and (min-width: 131.250em) {
+	.side {
+		ul {
+		    width: 5%;
+		}
+	}
+}
+/* 2500px */
+@media screen and (min-width: 156.250em) {
+	.side {
+		ul {
+		    width: 4%;
+		}
+	}
+}
+/* 3200px */
+@media screen and (min-width: 200.000em) {
+	.side {
+		ul {
+		    width: 3%;
+		}
 	}
 }
