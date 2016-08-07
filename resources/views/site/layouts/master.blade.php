@@ -33,9 +33,9 @@
 					<div class="row">
 						<div class="medium-2 columns">
 							<div class="side show-for-medium">
-								<!-- <a href="/" class="logo">A2ZGame</a> -->
 								@if($leftmenu)
 								<ul>
+									<!-- <li><a href="/" class="logo"><img src="/img/logo.png"></a></li> -->
 									@foreach($leftmenu as $key => $value)
 										<li><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
 									@endforeach
