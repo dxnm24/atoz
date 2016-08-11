@@ -1,7 +1,7 @@
 <header class="show-for-medium">
 	<div class="row column">
-		<!-- <a href="/" class="logo"><img src="/img/logo.png" alt="" /></a> -->
-		<a href="/" class="logo"><span>A2Z</span>Game</a>
+		<a href="/" class="logo"><img src="/img/logo.png" alt="" /></a>
+		<!-- <a href="/" class="logo"><span>A2Z</span>Game</a> -->
 		<form action="{{ route('site.search') }}" method="GET" class="search-form">
 			<div class="input-group">
 				<input name="name" type="text" value="" class="input-group-field" id="searchtext" placeholder="Enter Game Name">
