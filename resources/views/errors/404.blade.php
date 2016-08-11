@@ -14,10 +14,10 @@
 @section('content')
 <div class="box">
 	<div class="row column box-title">
-		<h3>{{ PAGENOTFOUND }}</h3>
+		<h1>{{ PAGENOTFOUND }}</h1>
 	</div>
 	<div class="row column">
-		<p>The requested URL was not found on this server. Please play more games at <a href="/">here</a></p>
+		<p>The requested URL was not found on this server. Please play more games at <a href="/"><strong>here</strong></a></p>
 	</div>
 </div>
 @endsection
