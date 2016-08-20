@@ -29,6 +29,8 @@ define('PAGENOTFOUND', '404 Page not found');
 //device
 define('MOBILE', 1);
 define('PC', 2);
+//facebook id
+define('FACEBOOK_APPID', '1048119881950150');
 //google code
 define('GA', "");
 // <script>
