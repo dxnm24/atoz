@@ -166,6 +166,16 @@ class SiteController extends Controller
             }
             $total = count($data);
             if($total > 0) {
+                //auto meta tag for seo
+                if(empty($type->meta_title)) {
+                    $type->meta_title = 'Play free '.$type->name.' games and feeling | A2ZGame';
+                }
+                if(empty($type->meta_keyword)) {
+                    $type->meta_keyword = $type->name.' game, '.$type->name.' games, play '.$type->name.' games, free '.$type->name.' games';
+                }
+                if(empty($type->meta_description)) {
+                    $type->meta_description = 'Top 1000 free '.$type->name.' games on A2Zgame. What are you wating for, Just click to Play '.$type->name.' games with your friends and became the best';
+                }
                 //put cache
                 $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate])->render();
                 Cache::forever($cacheName, $html);
@@ -202,6 +212,16 @@ class SiteController extends Controller
                 $paginate = 1;
                 $total = count($data);
                 if($total > 0) {
+                    //auto meta tag for seo
+                    if(empty($type->meta_title)) {
+                        $type->meta_title = 'Play free '.$type->name.' games and feeling | A2ZGame';
+                    }
+                    if(empty($type->meta_keyword)) {
+                        $type->meta_keyword = $type->name.' game, '.$type->name.' games, play '.$type->name.' games, free '.$type->name.' games';
+                    }
+                    if(empty($type->meta_description)) {
+                        $type->meta_description = 'Top 1000 free '.$type->name.' games on A2Zgame. What are you wating for, Just click to Play '.$type->name.' games with your friends and became the best';
+                    }
                     //put cache
                     $html = view('site.game.type', ['data' => $data, 'type' => $type, 'total' => $total, 'paginate' => $paginate, 'isHotOrNew' => $isHotOrNew])->render();
                     Cache::forever($cacheName, $html);
@@ -252,15 +272,13 @@ class SiteController extends Controller
             }
             //auto meta tag for seo
             if(empty($game->meta_title)) {
-                $game->meta_title = 'Game '.$game->name.' hấp dẫn | Chơi trò chơi '.$game->name.' online miễn phí';
+                $game->meta_title = 'Play '.$game->name.' game for free | A2ZGame';
             }
             if(empty($game->meta_keyword)) {
-                $gameNameNoLatin = CommonMethod::convert_string_vi_to_en($game->name);
-                $game->meta_keyword = $gameNameNoLatin.', '.$game->name.', game '.$game->name.', choi game '.$gameNameNoLatin.', tro choi '.$gameNameNoLatin.', game '.$game->name.' mới nhất';
+                $game->meta_keyword = $game->name.', '.$game->name.' game, play '.$game->name.' game, '.$game->name.' online, free '.$game->name.' game, play free '.$game->name;
             }
             if(empty($game->meta_description)) {
-                $gameNameNoLatin = CommonMethod::convert_string_vi_to_en($game->name);
-                $game->meta_description = 'Game '.$gameNameNoLatin.' hay nhat. Chơi '.$typeMain->name.' '.$game->name.' đặc biệt, mới lạ, hấp dẫn. Cùng chơi trò chơi '.$game->name.' cùng bạn bè để đua top và phá kỷ lục';
+                $game->meta_description = 'Free online fun with '.$game->name.' game on A2ZGame. We need your skill and ability. Playing '.$game->name.' game now and feeling the great momment';
             }
             //ad preroll
             if($device == PC) {
