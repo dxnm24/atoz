@@ -20,7 +20,7 @@ class CommonOption
     //language
     static function langArray()
     {
-        return array(VI=>'Tiếng việt'); //, EN=>'Tiếng anh'
+        return array(EN=>'Tiếng anh'); //, VI=>'Tiếng việt'
     }
     static function getLang($lang=VI)
     {
