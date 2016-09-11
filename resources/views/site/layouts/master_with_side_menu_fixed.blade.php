@@ -49,14 +49,35 @@
 				</div>
 			</div>
 			<div class="row column">
-				<div class="main">
-					@include('site.common.top')
-					@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
-					<div class="content">
-						@yield('content')
+				<div class="container">
+					<div class="row">
+						<div class="medium-2 columns">
+							<div class="side show-for-medium">
+								@if($leftmenu)
+								<ul>
+									<!-- <li><a href="/" class="logo"><img src="/img/logo.png"></a></li> -->
+									@foreach($leftmenu as $key => $value)
+										<li><a href="{{ url($value->url) }}">{!! $value->name !!}</a></li>
+									@endforeach
+								</ul>
+								@endif
+								<!-- <div class="gotop">
+									<i class="fa fa-angle-up"></i>
+								</div> -->
+							</div>
+						</div>
+						<div class="medium-10 columns">
+							<div class="main">
+								@include('site.common.top')
+								@include('site.common.ad', ['posPc' => 1, 'posMobile' => 2])
+								<div class="content">
+									@yield('content')
+								</div>
+								@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
+								@include('site.common.bottom')
+							</div>
+						</div>
 					</div>
-					@include('site.common.ad', ['posPc' => 3, 'posMobile' => 4])
-					@include('site.common.bottom')
 				</div>
 			</div>
 		</div>

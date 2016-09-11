@@ -27,7 +27,7 @@
 <div id="menubox" style="display: none;">
 	<ul>
 		<li><a class="menubox-home" href="/">A2zgame.net</a></li>
-		<li><a class="menubox-reload" href="{{ CommonUrl::getUrl($game->slug).'?play=true' }}">Reload Game</a></li>
+		<li><a class="menubox-reload" href="{{ url($game->slug).'?play=true' }}">Reload Game</a></li>
 		<li><a class="menubox-back" onclick="window.history.go(-1);return false;">Previous Page</a></li>
 		<li><a class="menubox-close" id="menuhide">Close Menu</a></li>
 	</ul>

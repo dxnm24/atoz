@@ -7,13 +7,13 @@
 		@foreach($bottommenu as $key => $value)
 		<div class="column">
 			<div class="bottom-item hide-for-small-only">
-				<a href="{{ CommonUrl::getUrl($value->url) }}">
+				<a href="{{ url($value->url) }}">
 					<img src="{{ $value->image }}" alt="{!! $value->name !!}" title="{!! $value->name !!}">
 					<span>{!! $value->name !!}</span>
 				</a>
 			</div>
 			<div class="bottom-item-mobile show-for-small-only">
-				<a href="{{ CommonUrl::getUrl($value->url) }}"><i class="fa fa-angle-right" aria-hidden="true"></i> {!! $value->name !!}</a>
+				<a href="{{ url($value->url) }}"><i class="fa fa-angle-right" aria-hidden="true"></i> {!! $value->name !!}</a>
 			</div>
 		</div>
 		@endforeach

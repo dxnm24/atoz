@@ -30,7 +30,11 @@ class CommonOption
     //menu
     static function menuTypeArray()
     {
-        return array(MENUTYPE1=>'Top menu', MENUTYPE2=>'Left menu', MENUTYPE3=>'Bottom menu');
+        return array(
+            MENUTYPE1=>'Top menu', 
+            // MENUTYPE2=>'Left menu', 
+            MENUTYPE3=>'Bottom menu'
+        );
     }
     static function getMenuType($menuType=ACTIVE)
     {

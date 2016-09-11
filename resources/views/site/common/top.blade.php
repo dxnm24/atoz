@@ -18,7 +18,7 @@
 			<li {{ checkCurrent(url('/'), 1) }}><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
 			@if($topmenu)
 				@foreach($topmenu as $key => $value)
-					<li {{ checkCurrent(url($value->url)) }}><a href="{{ CommonUrl::getUrl($value->url) }}">{!! $value->name !!}</a></li>
+					<li {{ checkCurrent(url($value->url)) }}><a href="{{ url($value->url) }}">{!! $value->name !!}</a></li>
 				@endforeach
 			@endif
 		</ul>

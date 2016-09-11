@@ -27,7 +27,7 @@
 @if(count($data) > 0)
 	@foreach($data as $key => $value)
 		@if(count($value->games) > 0)
-			<?php $url = CommonUrl::getUrl($value->slug); ?>
+			<?php $url = url($value->slug); ?>
 			@if(count($value->games2) == 0)
 			<div class="box">
 				<div class="row column box-title">
@@ -43,8 +43,8 @@
 			</div>
 			@else
 			<?php 
-				$urlLatest = CommonUrl::getUrl('latest-'.$value->slug);
-				$urlBest = CommonUrl::getUrl('best-'.$value->slug);
+				$urlLatest = url('latest-'.$value->slug);
+				$urlBest = url('best-'.$value->slug);
 			?>
 			<div class="box">
 				<ul class="box-tabs clearfix" data-tabs id="box-tabs-{{ $value->id }}">
