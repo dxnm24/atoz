@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use DB;
+use Cache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,12 +22,18 @@ class AppServiceProvider extends ServiceProvider
 
     private function getMenus($type, $name)
     {
-        $menu = DB::table('menus')
-            ->where('status', ACTIVE)
-            ->where('type', $type)
-            ->orderByRaw(DB::raw("position = '0', position"))
-            ->orderBy('name')
-            ->get();
+        $cacheName = 'menu_'.$type.'_'.$name;
+        if(Cache::has($cacheName)) {
+            $menu = Cache::get($cacheName);
+        } else {
+            $menu = DB::table('menus')
+                ->where('status', ACTIVE)
+                ->where('type', $type)
+                ->orderByRaw(DB::raw("position = '0', position"))
+                ->orderBy('name')
+                ->get();
+            Cache::forever($cacheName, $menu);
+        }
         view()->share($name, $menu);
     }
 
